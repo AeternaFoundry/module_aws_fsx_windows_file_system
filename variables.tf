@@ -14,6 +14,7 @@ Optional:
     - deployment_type
     - final_backup_tags
     - kms_key_id
+    - network_type
     - preferred_subnet_id
     - region
     - security_group_ids
@@ -52,6 +53,7 @@ EOT
     security_group_ids                = optional(set(string))
     region                            = optional(string)
     preferred_subnet_id               = optional(string)
+    network_type                      = optional(string)
     kms_key_id                        = optional(string)
     final_backup_tags                 = optional(map(string))
     deployment_type                   = optional(string)
@@ -148,6 +150,6 @@ EOT
     ])
     error_message = "all of: must be between 7 and 7 characters; must be in the format d:HH:MM"
   }
-  # Note: 12 additional provider-side validators are enforced at apply time but not mirrored as validation{} blocks here (bespoke or non-mechanically-translatable).
+  # Note: 13 additional provider-side validators are enforced at apply time but not mirrored as validation{} blocks here (bespoke or non-mechanically-translatable).
 }
 

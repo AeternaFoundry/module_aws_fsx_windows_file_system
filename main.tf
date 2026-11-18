@@ -10,6 +10,7 @@ resource "aws_fsx_windows_file_system" "fsx_windows_file_systems" {
   security_group_ids                = each.value.security_group_ids
   region                            = each.value.region
   preferred_subnet_id               = each.value.preferred_subnet_id
+  network_type                      = each.value.network_type
   kms_key_id                        = each.value.kms_key_id
   final_backup_tags                 = each.value.final_backup_tags
   deployment_type                   = each.value.deployment_type
